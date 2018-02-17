@@ -97,36 +97,3 @@ def get_goodreads_reviews(books):
         get_review_links(ID)
         # create review ID
         review_scrape(ID)
-
-
-
-
-# scrape the reviews
-from selenium import webdriver
-import time
-import pandas as pd
-import pickle
-import json
-
-# get the reviews
-books_dict = {}
-driver = webdriver.Chrome()
-books = pd.read_csv('goodreads_library_export.csv')
-books = books['Book Id']
-
-## TEMP ##
-books = books[:2]
-## TEMP## 
-
-get_goodreads_reviews(books)
-driver.quit()
-
-# save the data as a pickle file and as a json object
-with open("goodreads_reviews.p",'wb') as file:
-    pickle.dump(books_dict,file)
-with open("goodreads_reviews.json","w") as file:
-    file.write(json.dumps(books_dict))
-
-# to open:
-## pickle: assign a new dict object with: this_file = pickle.load(open('goodreads_reviews.p','rb'))
-## json: assign new object with: this_file = json.load(open('goodreads_reviews.json'))
