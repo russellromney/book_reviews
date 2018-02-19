@@ -89,7 +89,6 @@ def one_book_reviews(isbn):
 
 def get_amazon_reviews(isbns):
     '''gets 300 Amazon book reviews each books in a list of isbns'''
-    print(isbns)
     # set up dictionary
     books_dict_setup(isbns)
     # scrape reviews for each book
