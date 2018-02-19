@@ -119,10 +119,6 @@ driver = webdriver.Chrome()
 goodreads = pd.read_csv('goodreads_library_export.csv')
 books = goodreads['Book Id']
 
-## TEMP ##
-books = books[:2]
-## TEMP## 
-
 get_goodreads_reviews(books)
 driver.quit()
 
