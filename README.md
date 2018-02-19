@@ -9,9 +9,13 @@ Everything is contained within the class book_reviews including data and metadat
 
 The /scrape folder contains the code - 100% from me bytheway, toot my own horn??!! - that did the scraping. As of right now it's been working overtime without number limits on a little-used to see how many reviews it can scrape. We're at over 600,000 right now and working memory is not happy.
 
-> goodreads_scrape.py: has functions culminating in `get_goodreads_reviews` that takes a list of Goodreads book IDs and -- if you work it around a little bit with a Selenium webdriver (chrome, firefox, etc. all valid) -- returns a python dictionary that contains the book, book url, title, and url/text/date/rating for each review.
+`goodreads_scrape.py: `
 
-> amazon_scrape.py: does the same thing as 
+> has functions culminating in `get_goodreads_reviews` that takes a list of Goodreads book IDs and -- if you work it around a little bit with a Selenium webdriver (chrome, firefox, etc. all valid) -- returns a python dictionary that contains the book, book url, title, and url/text/date/rating for each review.
+
+`amazon_scrape.py: `
+
+> does the same thing 
 
 The dictionary structures are contained as .p pickle files and the JSON are in .json.
 
