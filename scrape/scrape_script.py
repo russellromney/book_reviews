@@ -21,6 +21,10 @@ from amazon_scrape import *
 from goodreads_scrape import *
 
 
+
+
+
+
 ##### Goodreads #####
 # build the dictionary
 books_dict = {}
@@ -32,8 +36,14 @@ books = goodreads['Book Id']
 books = books[:2]
 ## TEMP## 
 
-get_goodreads_reviews(books)
-driver.quit()
+try:
+    get_goodreads_reviews(books)
+except:
+    driver.quit()
+try:
+    driver.quit()
+except:
+    pass
 
 # save the data as a pickle file and as a json object
 with open("goodreads_reviews.p",'wb') as file:
@@ -45,11 +55,15 @@ with open("goodreads_reviews.json","w") as file:
 ## pickle: assign a new dict object with: this_file = pickle.load(open('goodreads_reviews.p','rb'))
 ## json: assign new object with: this_file = json.load(open('goodreads_reviews.json'))
 ##### Goodreads #####
-#####
-#####
-#####
-#####
-#####
+
+
+
+
+
+
+
+
+
 ##### Amazon #####
 # get the reviews
 books_dict = {}
@@ -65,8 +79,16 @@ isbns = isbns[:2]
 ## TEMP ##
 
 driver = webdriver.Chrome()
-get_amazon_reviews(isbns)
-driver.quit()
+
+try:
+    get_amazon_reviews(isbns)
+except:
+    driver.quit()
+try:
+    driver.quit()
+except:
+    pass
+
 # save the data as a pickle file and as a json object
 with open("amazon_reviews.p",'wb') as file:
     pickle.dump(books_dict,file)
