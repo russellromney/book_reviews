@@ -26,7 +26,7 @@ from goodreads_scrape import *
 books_dict = {}
 driver = webdriver.Chrome()
 goodreads = pd.read_csv('goodreads_library_export.csv')
-books = books['Book Id']
+books = goodreads['Book Id']
 
 ## TEMP ##
 books = books[:2]
