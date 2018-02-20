@@ -4,7 +4,7 @@ Class and data of goodreads and amazon book reviews; Feel free to do some copy/p
 
 This repo has functions and data that allows you to scrape reviews from Amazon and Goodreads given a goodreads library export; it can be worked with very easily to do a lot for whatever you need. I did this originally for CS 479 at the University of Idaho.
 
-Everything is contained within the class book_reviews including data and metadata. Download/clone the whole repo to use the class easily. 
+Everything is contained within the class book_reviews (in `book_reviews.py`) including data and metadata. Download/clone the whole repo to use the class easily. 
 
 # Objects
 
