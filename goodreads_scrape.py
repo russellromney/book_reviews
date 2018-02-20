@@ -7,7 +7,7 @@ Created on Mon Feb 19 11:53:11 2018
 """
 def books_dict_setup(books):
     for ID in books:
-        books_dict[ID]={
+        books_dict[str(ID)]={
                 "title":'',
                 "book_url":'',
                 "review_urls":[],
@@ -121,15 +121,16 @@ import json
 books_dict = {}
 driver = webdriver.Chrome()
 goodreads = pd.read_csv('goodreads_library_export.csv')
-books = goodreads['Book Id']
+books = [str(id) for id in goodreads['Book Id']]
 get_goodreads_reviews(books)
 driver.quit()
 
+
 # save the data as a pickle file and as a json object
-with open("goodreads_reviews.p",'wb') as file:
+with open("goodreads_reviews1.p",'wb') as file:
     pickle.dump(books_dict,file)
 with open("goodreads_reviews.json","w") as file:
-    file.write(json.dumps(books_dict))
+    file.write(json.dumps(d))
 
 # to open:
 ## pickle: assign a new dict object with: this_file = pickle.load(open('goodreads_reviews.p','rb'))
