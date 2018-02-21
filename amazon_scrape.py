@@ -32,7 +32,7 @@ structure for JSON:
     "review_urls":[],
     "reviews": {
             review_number:{
-                    "review_url":review_url,
+                    "review_url":'',
                     "rating":0,
                     "date":'',
                     "text":''
@@ -48,14 +48,17 @@ structure for JSON:
 # get ten reviews from one page
 def one_page_scrape(isbn):
     '''gets ten reviews' text,url,date,rating (string) from an Amazon review page loaded in the the webdriver'''
-    # get the larger review div and the ten individual review divs
+    
+    # get the larger review div and the ten individual review divs`
     reviews = driver.find_element_by_id('cm_cr-review_list').find_elements_by_class_name('review')
     for i in range(10):
         try:
             #find the review id
             review_number = reviews[i].get_attribute('id')
+
             # initialize review dictionary
             books_dict[isbn]["reviews"][review_number] = {"review_url":'',"rating":0,"date":'',"text":''}
+
             # get url, text, date, rating
             books_dict[isbn]["reviews"][review_number]["rating"] = reviews[i].find_element_by_class_name("a-link-normal").get_attribute('title')
             books_dict[isbn]["reviews"][review_number]["text"] = reviews[i].find_element_by_class_name("review-text").text
@@ -71,14 +74,18 @@ def one_book_reviews(isbn):
     try:
         # go to the initial review page
         driver.get(books_dict[isbn]["book_url"])
+        
         # get book title
         books_dict[isbn]["title"] = driver.find_element_by_id('cm_cr-brdcmb').find_element_by_class_name('a-link-normal').text
+        
         # scrape ten reviws for 30 pages
         for n in range(30):
             # wait for AJAX
             time.sleep(1)
+            
             # scrape reviews page
             one_page_scrape(isbn)
+            
             # go to the next review page
             driver.find_element_by_class_name('a-last').click()
     except:
