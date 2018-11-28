@@ -21,7 +21,7 @@ Everything is contained within the class book_reviews (in `book_reviews.py`) inc
 `amazon_reviews.p` - pickle file of dictionary containing all the amazon reviews
 
 ### two code files
-Two files contain the code - 100% from me bytheway, toot my own horn??!! - that did the scraping:
+Two files contain the code - 100% from me, no copypasta - that did the scraping:
 
 `goodreads_scrape.py:`
 > Combines Selenium with Beautiful Soup; has functions culminating in `get_goodreads_reviews` that takes a list of Goodreads book IDs and -- if you work it around a little bit with a Selenium webdriver (chrome, firefox, etc. all valid) -- returns a python dictionary that contains the book, book url, title, and url/text/date/rating for each review. __TIME USAGE UPDATE: Old version of `goodreads_scrape.py` (before 2/19) time usage in minutes was about n_reviews (.3+1.5)/60, so for my 870 books and 300 reviews each that was _**over 6 days**_; the new version (as of 2/19) combines Selenium with BeautifulSoup/LXML and takes about 25 seconds per book with a decent internet connection, or only **four hours for a performance increase by a factor of 20; a little over 10 reviews per second**__
