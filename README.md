@@ -8,18 +8,6 @@ Everything is contained within the class book_reviews (in `book_reviews.py`) inc
 
 # Objects
 
-### five data files:
-
-`goodreads_library_export.csv` - csv export of my goodreads library as of January 2018
-
-`goodreads_reviews.json` - json file with goodreads reviews for all books in the `goodreads_library_export.csv`
-
-`goodreads_reviews.p` - pickle file of dictionary containing all the goodreads reviews
-
-`amazon_reviews.json` - json file with all amazon reviews of books in goodreads library
-
-`amazon_reviews.p` - pickle file of dictionary containing all the amazon reviews
-
 ### two code files
 Two files contain the code - 100% from me, no copypasta - that did the scraping:
 
@@ -33,3 +21,14 @@ __TIME USAGE UPDATE: Old version of `goodreads_scrape.py` (before 2/19) time usa
 > does the same thing; time usage is at about ten reviews per second. Uses only Selenium. Final function is `get_amazon_reviews` that takes list of ISBN-10s. Usage at the bottom of the file.
 
 
+### five data files:
+
+`goodreads_library_export.csv` - csv export of my goodreads library as of January 2018
+
+`goodreads_reviews.json` - json file with goodreads reviews for all books in the `goodreads_library_export.csv`
+
+`goodreads_reviews.p` - pickle file of dictionary containing all the goodreads reviews
+
+`amazon_reviews.json` - json file with all amazon reviews of books in goodreads library
+
+`amazon_reviews.p` - pickle file of dictionary containing all the amazon reviews
